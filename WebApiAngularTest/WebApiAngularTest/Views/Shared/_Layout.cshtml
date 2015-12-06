@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <my-spinner img="~/Content/724.GIF"></my-spinner>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/app/testApp.js"></script>
+    <script src="~/Scripts/app/services/spinnerService.js"></script>
+    <script src="~/Scripts/app/services/httpService.js"></script>
+    <script src="~/Scripts/app/directives/mySpinner.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

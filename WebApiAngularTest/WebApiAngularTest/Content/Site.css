@@ -1,0 +1,33 @@
+﻿table {
+    margin-top: 50px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid gray;
+    text-align: center;
+    padding: 10px;
+    font-family: Arial;
+    font-size: 18px;
+    color: gray;
+}
+
+th {
+    background: gray;
+    height: 40px;
+    padding: 0;
+    color: white;
+}
+
+#path {
+    margin-top: 10px;
+    font-family: Arial;
+    font-size: 18px;
+    color: black;
+}
+#path span{
+    font-family: Arial;
+    font-size: 15px;
+    color: gray;
+}

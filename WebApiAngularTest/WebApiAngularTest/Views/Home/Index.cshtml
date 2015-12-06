@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div ng-controller="directoryCtrl">
+
+    <table>
+        <tr>
+            <th>Less 10Mb</th>
+            <th>10Mb - 50MB</th>
+            <th>More 100Mb</th>
+        </tr>
+        <tr>
+            <td>{{lessCount}}</td>
+            <td>{{betweenCount}}</td>
+            <td>{{moreCount}}</td>
+        </tr>
+    </table>
+    <div id="path">Current path: &nbsp;<span>{{currentPass}}</span></div>
+    <hr />
+    
+    <ul>
+        <li><a href="#" ng-click="up()">"..."</a></li>
+        <li ng-repeat="dir in directories"><a href="#" ng-click="getDirectories(dir.FullName)">{{dir.Name}}</a></li>
+        <li ng-repeat="dir in files"><a href="#">{{dir.Name}}</a></li>
+    </ul>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/app/controllers/directoryController.js"></script>
+}
+
+
+
+
+
+
+
+
+
+@*<div>{{filesCount}}</div>
+    <div>Current Path: &nbsp;{{currentPass}}</div>
+    <a href="#" ng-click="up()">"..."</a>
+    <hr />
+    <ul>
+        <li ng-repeat="dir in directories"><a href="#" ng-click="getDirs(dir.FullName)">{{dir.Name}}</a></li>
+    </ul>
+    <ul>
+        <li ng-repeat="dir in files"><a href="#">{{dir.Name}}</a></li>
+    </ul>*@
