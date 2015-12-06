@@ -2,7 +2,7 @@
 
     $scope.directories = [];
     $scope.files = [];
-    $scope.currentPass = '';
+    $scope.currentPath = '';
     $scope.lessCount = 0;
     $scope.betweenCount = 0;
     $scope.moreCount = 0;
@@ -11,7 +11,7 @@
         directoryService.getDirs(path).then(function (data) {
             $scope.directories = data.Directories;
             $scope.files = data.Files;
-            $scope.currentPass = data.CurrentPath;
+            $scope.currentPath = data.CurrentPath;
             $scope.lessCount = data.FilesCount.LessCount;
             $scope.betweenCount = data.FilesCount.BetweenCount;
             $scope.moreCount = data.FilesCount.MoreCount;
@@ -22,7 +22,7 @@
 
     $scope.up = function () {
         var s = "";
-        var path = $scope.currentPass.split('\\');
+        var path = $scope.currentPath.split('\\');
         if (path[1] !== "") {
             path.pop();
             s = path.join('\\')
