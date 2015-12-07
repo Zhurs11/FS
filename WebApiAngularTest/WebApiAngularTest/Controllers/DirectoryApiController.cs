@@ -28,6 +28,7 @@ namespace WebApiAngularTest.Controllers
             }
             else
             {
+
                 DirectoryInfo dir = new DirectoryInfo(path);
                 try
                 {
@@ -35,6 +36,9 @@ namespace WebApiAngularTest.Controllers
                     dirView.Files = dir.GetFiles().Select(a => new ItemView { Name = a.Name }).ToList();
                 }
                 catch (UnauthorizedAccessException)
+                {
+                }
+                catch (DirectoryNotFoundException) 
                 {
                 }
 
@@ -70,6 +74,10 @@ namespace WebApiAngularTest.Controllers
             catch (UnauthorizedAccessException)
             {
             }
+            catch (DirectoryNotFoundException)
+            {
+            }
+
             return countModel;
         }
 
